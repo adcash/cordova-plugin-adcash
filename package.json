@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-adcash",
+  "version": "2.4.0",
+  "description": "Convert your application traffic to profit with Adcash mobile ads.",
+  "cordova": {
+    "id": "cordova-plugin-adcash",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/adcash/cordova-plugin-adcash.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-adcash",
+    "adcash",
+    "Adcash"
+  ],
+  "author": "Adcash OU",
+  "license": "LicenseRef-LICENSE",
+  "bugs": {
+    "url": "https://github.com/adcash/cordova-plugin-adcash/issues"
+  },
+  "homepage": "https://github.com/adcash/cordova-plugin-adcash#readme"
+}

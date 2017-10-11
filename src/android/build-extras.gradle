@@ -1,0 +1,13 @@
+
+ext.cdvBuildToolsVersion = '25.0.3'
+
+
+repositories {
+  flatDir {
+	dirs 'libs'
+  }
+}
+   
+dependencies {
+	compile(name: 'adcash-sdk-lib-2.4.0', ext: 'aar')
+}

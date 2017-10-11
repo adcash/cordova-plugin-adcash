@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-adcash" version="2.4.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AdcashSDK</name>
+    <keywords>adcash,ads,banner,interstitial,rewarded</keywords>
+    <js-module name="AdcashSDK" src="www/AdcashSDK.js">
+        <clobbers target="AdcashSDK" />
+    </js-module>
+    <platform name="android">
+
+		<framework src="com.android.support:appcompat-v7:25.3.1" />
+		<framework src="com.google.firebase:firebase-core:10.0.1" />
+		<framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+		
+		<config-file parent="/manifest/application" target="AndroidManifest.xml">
+			<activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+				android:name="com.adcash.mobileads.ui.AdcashActivity"
+				android:theme="@android:style/Theme.Translucent" />
+		</config-file>
+
+		<config-file parent="/*" target="AndroidManifest.xml" >
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+		</config-file>
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AdcashSDK">
+                <param name="android-package" value="com.adcash.cordova.plugin.AdcashSDK" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AdcashSDK.java" target-dir="src/com/adcash/cordova/plugin/AdcashSDK" />
+        <source-file src="src/android/libs/adcash-sdk-lib-2.4.0.aar" target-dir="libs/" />
+
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="AdcashSDK">
+                <param name="ios-package" value="AdcashSDK" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+            </dict>
+        </config-file>
+        <source-file src="src/ios/AdcashSDK.m" />
+        <framework src="src/ios/AdcashSDK.framework" custom="true" />
+
+        <!-- AdcashSDK's system framework dependencies -->
+        <framework src="AdSupport.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="UIKit.framework" />
+
+        <!-- AFNetworking's system framework dependencies -->
+        <framework src="MobileCoreServices.framework" />
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+    </platform>
+</plugin>
