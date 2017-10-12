@@ -15,7 +15,7 @@
 1. Create new zone(s) for banner and/or interstitial and/or rewarded video ads in [AdCash portal](https://www.adcash.com/console/scripts.php) for your registered app then use those zone IDs in next steps.
 2. Import Adcash SDK in your Cordova project using single line (inside your project and not from outside)
 ```bash
-cordova plugins add cordova-plugin-adcash
+cordova plugins add https://github.com/adcash/cordova-plugin-adcash.git
 ```
 3. Your Adcash SDK is ready to use just load and display ads of your choice  
 
